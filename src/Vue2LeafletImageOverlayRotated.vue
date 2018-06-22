@@ -25,6 +25,10 @@ const props = {
     type: Boolean,
     default: false,
   },
+  errorOverlayUrl: {
+    type: String,
+    default: '',
+  },
   visible: {
     type: Boolean,
     custom: true,
@@ -48,6 +52,7 @@ export default {
       alt: this.alt,
       interactive: this.interactive,
       crossOrigin: this.crossOrigin,
+      errorOverlayUrl: this.errorOverlayUrl,
     };
 
     this.mapObject = L.imageOverlay.rotated(this.url, this.latlngs, options);

@@ -1,19 +1,15 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    parser: 'babel-eslint'
   },
-  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: 'airbnb-base',
-  // required to lint *.vue files
-  plugins: [
-    'html'
+  env: {
+    node: true
+  },
+  'extends': [
+    'plugin:vue/essential',
+    '@vue/airbnb'
   ],
-  "globals": {
-    window: true,
-    document: true
-  },
   // add your custom rules here
   'rules': {
     // allow paren-less arrow functions

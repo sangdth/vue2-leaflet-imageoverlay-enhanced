@@ -1,12 +1,18 @@
 {
-  "name": "vue2-leaflet-imageoverlayrotated",
+  "name": "vue2-leaflet-imageoverlay-rotated",
   "version": "1.0.1",
   "description": "ImageOverlay plugin extension for vue2-leaflet package",
-  "main": "dist/Vue2LeafletImageOverlayRotated.js",
+  "main": "./dist/Vue2LeafletImageOverlayRotated.common.js",
   "scripts": {
-    "build": "vue build Vue2LeafletImageOverlayRotated.vue --prod --lib --config build.config.js",
+    "build": "vue-cli-service build --target lib --name Vue2LeafletImageOverlayRotated './src/Vue2LeafletImageOverlayRotated.vue'",
     "example": "vue build example.vue"
   },
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json",
+    "*.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/sangdth/vue2-leaflet-imageoverlay-rotated.git"
@@ -26,16 +32,13 @@
   "homepage": "https://github.com/sangdth/vue2-leaflet-imageoverlay-rotated",
   "dependencies": {
     "leaflet": "^1.3.1",
-    "vue2-leaflet": "^1.0.2",
-    "webpack-node-externals": "^1.7.2"
+    "vue2-leaflet": "^1.0.2"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "babel-preset-env": "^1.6.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-html": "^4.0.5",
-    "eslint-plugin-import": "^2.12.0",
-    "vue-cli": "^2.9.6"
+    "@vue/cli-plugin-babel": "^3.0.0-rc.3",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.3",
+    "@vue/cli-service": "^3.0.0-rc.3",
+    "@vue/eslint-config-airbnb": "^3.0.0-rc.3",
+    "vue-template-compiler": "^2.5.16"
   }
 }

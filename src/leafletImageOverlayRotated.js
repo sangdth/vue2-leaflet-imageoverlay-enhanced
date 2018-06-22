@@ -1,4 +1,3 @@
-
 /*
  * 🍂 class ImageOverlay.Rotated
  * 🍂 inherits ImageOverlay
@@ -83,8 +82,10 @@ L.ImageOverlay.Rotated = L.ImageOverlay.extend({
 
     // this._image is reused by some of the methods of the parent class and
     // must keep the name, even if it is counter-intuitive.
-    this._image = L.DomUtil.create('div',
-      `leaflet-image-layer ${this._zoomAnimated ? 'leaflet-zoom-animated' : ''}`);
+    this._image = L.DomUtil.create(
+      'div',
+      `leaflet-image-layer ${this._zoomAnimated ? 'leaflet-zoom-animated' : ''}`,
+    );
 
     const div = this._image;
 
@@ -144,8 +145,8 @@ L.ImageOverlay.Rotated = L.ImageOverlay.extend({
     // Probably because the image hasn't loaded yet.
     }
 
-    const scaleX = pxTopLeft.distanceTo(pxTopRight) / imgW * Math.cos(skewX);
-    const scaleY = pxTopLeft.distanceTo(pxBottomLeft) / imgH * Math.cos(skewY);
+    const scaleX = pxTopLeft.distanceTo(pxTopRight) / (imgW * Math.cos(skewX));
+    const scaleY = pxTopLeft.distanceTo(pxBottomLeft) / (imgH * Math.cos(skewY));
 
     this._rawImage.style.transformOrigin = '0 0';
 
