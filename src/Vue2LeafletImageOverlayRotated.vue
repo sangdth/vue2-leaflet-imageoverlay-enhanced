@@ -63,6 +63,15 @@ export default {
     this.parentContainer.addLayer(this, !this.visible);
   },
 
+  watch: {
+    latlngs: {
+      deep: true,
+      handler(){
+        this.mapObject.reposition(this.latlngs)
+      }
+    }
+  },
+
   beforeDestroy() {
     this.parentContainer.removeLayer(this);
   },
